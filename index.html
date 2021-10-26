@@ -11,19 +11,19 @@
 <body>
     <header class="home">
         <div class="img-holder">
-            <nav>
+            <nav class="head-nav">
                 <div class="navbar">
                     <div class="logo">
                         <a class="logo-name">ASKHALSA LOGO</a>
                     </div>
-            
+                    
                     <ul class="main-nav">
                         <li><a class="current-page" href="#">Home</a></li>
                         <li><a href="#About">About</a></li>
                         <li><a href="#Services">Services</a></li>
                         <li><a href="#Tours">Tours</a></li>
-                    </ul>
-            
+                    </ul>    
+                   
                     <a href="#" onclick="hamburger()" class="menu-btn">
                         <i class="fas fa-bars fa-2x" id="ham-btn"></i>
                     </a>
@@ -46,13 +46,14 @@
                     <h1>scroll project</h1>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat eaque libero commodi beatae voluptate nisi odio sit nesciunt laudantium eveniet.</p>
     
-                    <a href="#" class="btn btn-white scroll-link">Explore Tours</a>
+                    <a href="#Tours" class="btn btn-white scroll-link">Explore Tours</a>
                 </div>
             </div>
         </div>
         
 
     </header>
+    
 
     <section id="About" class="section">
         <div class="title">
@@ -71,5 +72,64 @@
             <h2>Featured <span>Tours</span></h2>
         </div>
     </section>
+    
+    <footer class="section">
+        <p>
+            copyright &copy; Scroll project Pvt. Ltd. <span id="date"> </span>, All rigthts reserved
+        </p>
+    </footer>
+
+    <a href="#" class="btn top-link">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+    // ham-menu 
+        const headNav = document.querySelector(".head-nav");
+        const banner = document.querySelector(".banner");
+        
+        function hamburger(){
+            const x = document.querySelector(".hamburger-menu");
+            if(screen.width <= 768){
+                if(x.style.display === "none"){
+                    x.style.display = "block";
+                    headNav.style.backgroundColor = "white";
+                    banner.style.margin = "auto";
+                }
+                else{
+                    x.style.display = "none";
+                    headNav.style.backgroundColor = "transparent";
+                    banner.style.margin = "36vh auto";
+                }
+            }
+        }
+
+    // automatic Date
+        const date = document.getElementById("date");
+        date.innerHTML = new Date().getFullYear();
+    
+    // fixed nav
+        const topLink = document.querySelector(".top-link");
+        const navbar = document.querySelector(".navbar");
+        window.addEventListener('scroll', function(){
+            const scrollHeight = window.pageYOffset;
+            const navHeight = navbar.getBoundingClientRect().height;
+
+            // if(scrollHeight > navHeight){
+            //     navbar.classList.add("fixed-nav");
+            // }
+            // else{
+            //     navbar.classList.remove("fixed-nav");
+            // }
+
+            if(scrollHeight > 800){
+                topLink.classList.add('show-link');
+            }
+            else{
+                topLink.classList.remove('show-link');
+            }
+        })
+    </script>
+
 </body>
 </html>

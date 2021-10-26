@@ -4,11 +4,18 @@
     margin: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 a{
     color: white;
     text-decoration: none;
 }
 
+#head-nav{
+    background-color: transparent;
+}
 
 .img-holder{
     background: url(./images/banner.jpg) no-repeat;
@@ -72,21 +79,31 @@ a{
 
 .hamburger-menu{
     display: none;
+    background-color: white;
 }
 
 .menu-btn{
     display: none;
+    color: black;
+}
+
+.menu-btn a{
+    color: white;
 }
 
 .hamburger-menu a{
    color: black;
-   border-bottom: 1px solid gray;
+   overflow: hidden;
    display: block;
-   margin: 5px auto;
+   margin: 6px 18px;
    transition: all 0.3s ease-in-out;
    padding: 14px 16px;
    text-decoration: none;
-   font-size: 1.1rem;
+   font-size: 1.3rem;
+}
+
+.hamburger-menu a:first-child{
+    margin-top: 20px;
 }
 
 .hamburger-menu a:hover{
@@ -94,20 +111,15 @@ a{
     color: whitesmoke;
 }
 
-.close-btn{
-    cursor: pointer;
-}
 
 .banner{
     width: auto;
     height: 40vh;
     object-fit: contain;
-}
-
-.banner{
     max-width: 700px;
     margin: 40vh auto;
 }
+
 
 .container-flex{
     display: flex;
@@ -144,6 +156,24 @@ a{
     border: white 3px solid;
 }
 
+.top-link{
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-size: 2rem;
+    border: none;
+    background-color: aqua;
+    bottom: 60px;
+    right: 40px;
+    position: fixed;
+    transition: all ease-in-out;
+    visibility: hidden;
+    z-index: -100;
+}
+
+.show-link{
+    visibility: visible;
+    z-index: 100;
+}
 
 .btn:hover{
     background: white;
@@ -163,6 +193,34 @@ a{
 
 .section .title span{
     color: cyan;
+}
+
+.section:nth-child(even) {
+    background-color: #F0F8FF;
+}
+
+footer.section{
+    padding-top: 5rem;
+    height: 10rem;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    background-color: #1c2732;
+    color: white;
+}
+
+.fixed-nav{
+    top: 0;
+    /* left: -30px; */
+    position: fixed;             /*           side note: sticky is working perfectly but it doesn't span to whole page!            */
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.fixed-nav.main-nav li{
+    color: black;
 }
 
 
